@@ -8,3 +8,5 @@ config_files=(~/.zsh/*.zsh)
 for file in ${config_files}; do
   source "$file"
 done
+
+eval "$(starship init zsh)"
