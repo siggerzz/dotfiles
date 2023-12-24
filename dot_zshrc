@@ -1,11 +1,5 @@
-#!/bin/zsh
-#ZSH Autoload
-autoload -Uz compinit promptinit
-compinit
-promptinit
-
-eval "$(starship init zsh)"
-
+# define PATH
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin
 # all of our zsh files
 typeset -U config_files
 config_files=(~/.zsh/*.zsh)
@@ -14,21 +8,3 @@ config_files=(~/.zsh/*.zsh)
 for file in ${config_files}; do
   source "$file"
 done
-
-# define PATH
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/usr/local/go/bin:$HOME/bin:$HOME/.krew/bin:$HOME/.cargo/bin"
-
-# load zsh completion files
-fpath=(~/.zsh/completions $fpath) 
-autoload -U compinit && compinit
-
-setopt inc_append_history share_history autocd autopushd pushdignoredups 
-setopt COMPLETE_ALIASES
-
-zstyle ':completion::complete:*' gain-privileges 1
-
-# History
-SAVEHIST=100000
-HISTFILE=~/.zsh_history
-
-umask 022
