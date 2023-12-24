@@ -135,7 +135,7 @@ module.exports = {
 
     // Whether to use the WebGL renderer. Set it to false to use canvas-based
     // rendering (slower, but supports transparent backgrounds)
-    webGLRenderer: true,
+    webGLRenderer: false,
 
     // for advanced config flags please refer to https://hyper.is/#cfg
   },
@@ -147,14 +147,15 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    "hyper-aura-theme",
     "hyper-sync-settings",
     "hypercwd",
     "hyperterm-dibdabs",
     "hyperterm-tabs",
     "hyper-search",
-    "hyper-blink",
-    "hyper-alt-click"
+    "hyper-alt-click",
+    "hyper-font-ligatures",
+    "hyper-one-dark",
+    "hyper-pane",
   ],
 
   // in development, you can create a directory under
