@@ -35,3 +35,6 @@ export AUTO_NOTIFY_IGNORE=("tmux" "tmate" "kubectl" "tmuxinator" "docker" "glanc
 
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Yubi
+export SSH_AUTH_SOCK="$(brew --prefix)/var/run/yubikey-agent.sock"
