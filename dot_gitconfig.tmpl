@@ -60,10 +60,10 @@ di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD 
 	ma = merge --abort												# Abort the current conflict resolution process, and try to reconstruct the pre-merge state.
 	mc = merge --continue											# After a git merge stops due to conflicts you can conclude the merge by running git merge --continue
 	mq = merge --quit													# Forget about the current merge in progress. Leave the index and the working tree as-is.
-	mm = merge master 												# Merge 'master' branch to the current branch.
+	mm = merge main 												# Merge 'main' branch to the current branch.
 	##############
 	o = checkout 															# Switch branches or restore working tree files.
-	om = checkout master											# Switch branch to master.
+	om = checkout main											# Switch branch to main.
 	ob = checkout -b 													# Create and switch to a new branch
 	##############
 	pr = prune --verbose --progress						# Prune all unreachable objects from the object database. Report all removed objects. Show progress.
@@ -79,10 +79,10 @@ di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD 
 	psfo = push --force origin								# Same as`push --force`but for origin.
 	psuo = push --set-upstream origin					# Same as`push --set-upstream`but for origin.
 	#############
-	psom = push origin master 								# Same as`push origin`but for master branch.
-	psaom = push --all origin master					# Same as`push --all origin`but for master branch.
-	psfom = push --force origin master				# Same as`push --force origin`but for master branch.
-	psuom = push --set-upstream origin master # Same as`push --set-upstream origin`but for master branch.
+	psom = push origin main 								# Same as`push origin`but for main branch.
+	psaom = push --all origin main					# Same as`push --all origin`but for main branch.
+	psfom = push --force origin main				# Same as`push --force origin`but for main branch.
+	psuom = push --set-upstream origin main # Same as`push --set-upstream origin`but for main branch.
 	#############
 	pl = pull 																# Fetch from and integrate with another repository or a local branch.
 	plr = pull --rebase 											# When true, rebase the current branch on top of the upstream branch after fetching.
@@ -90,11 +90,11 @@ di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD 
 	#############
 	plo = pull origin 											  # Same as`pull`but for origin.
 	plro = pull --rebase origin								# Same as`pull --rebase`but for origin.
-	plom = pull origin master									# Same as`pull origin`but for master branch.
+	plom = pull origin main									# Same as`pull origin`but for main branch.
 	#############
 	plu = pull upstream												# Same as`pull`but for upstream.
-	plum = pull upstream master								# Same as`pull upstream`but for master branch.
-	plrum = pull --rebase upstream master    	# Same as`pull --rebase` but for upstream and master branch.
+	plum = pull upstream main								# Same as`pull upstream`but for main branch.
+	plrum = pull --rebase upstream main    	# Same as`pull --rebase` but for upstream and main branch.
 #############
 rb = rebase # Reapply commits on top of another base tip.
 rba = rebase --abort # Abort the rebase operation and reset HEAD to the original branch.
@@ -111,7 +111,7 @@ res = reset --soft # Does not touch the index file or the working tree at all (b
 rehh = reset --hard HEAD # HEAD is defined explicitly
 remh = reset --mixed HEAD # HEAD is defined explicitly
 resh = reset --soft HEAD # HEAD is defined explicitly
-rehom = reset --hard origin/master # Throw away all my staged and unstaged changes, forget everything on my current local branch and make it exactly the same as origin/master.
+rehom = reset --hard origin/main # Throw away all my staged and unstaged changes, forget everything on my current local branch and make it exactly the same as origin/main.
 #############
 r = remote # Manage set of tracked repositories
 ra = remote add # Adds a remote named <name> for the repository at <url>.
@@ -163,11 +163,12 @@ fb = "!f() { git branch -a --contains $1; }; f" # Find branches containing commi
 ft = "!f() { git describe --always --contains $1; }; f" # Find tags containing commit
 fc = "!f() { git log --pretty=format:'%C(yellow)%h %Cblue%ad %Creset%s%Cgreen [%cn] %Cred%d' --decorate --date=short -S$1; }; f" # Find commits by source code
 fm = "!f() { git log --pretty=format:'%C(yellow)%h %Cblue%ad %Creset%s%Cgreen [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f" # Find commits by commit message
-dm = "!git branch --merged | grep -v '\\_' | xargs -n 1 git branch -d" # Remove branches that have already been merged with master (a.k.a. ‘delete merged’)
+dm = "!git branch --merged | grep -v '\\_' | xargs -n 1 git branch -d" # Remove branches that have already been merged with main (a.k.a. ‘delete merged’)
 [color]
 ui = auto
+
 [core]
-editor = vim
+editor = nano
 excludesfile = ~/.gitignore
 whitespace = trailing-space,space-before-tab
 [diff]
@@ -197,8 +198,6 @@ submoduleSummary = true
 [transfer]
 fsckobjects = true
 [trim]
-bases = master,gh-pages
-[url "git@github.com:batistein/"]
-insteadOf = https://github.com/batistein/
-
-# vim: set filetype=gitconfig:
+bases = main,gh-pages
+[url "git@github.com:siggerzz/"]
+insteadOf = https://github.com/siggerzz/
