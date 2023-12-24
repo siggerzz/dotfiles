@@ -1,0 +1,54 @@
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+# Desktop Labels
+yabai -m space 1 --label dev
+yabai -m space 3 --label web
+yabai -m space 4 --label comms
+yabai -m space 10 --label media
+yabai -m space 10 --label misc
+
+# Label specific applications
+yabai -m rule --add app="^Safari$" space=web
+yabai -m rule --add app="^Google Chrome$" space=web
+yabai -m rule --add app="^Discord$" space=comms
+yabai -m rule --add app="^Slack$" space=comms
+yabai -m rule --add app="^WhatsApp$" space=comms
+yabai -m rule --add app="^Visual Studio Code$" space=dev
+yabai -m rule --add app="^Activity Monitor$" space=dev
+yabai -m rule --add app="^Hyper$" space=dev
+yabai -m rule --add app="^Spotify$" space=media
+yabai -m rule --add app="^QuickTime Player$" space=media
+yabai -m rule --add app="^System Preferences$" space=misc
+yabai -m rule --add app="^Finder$" space=misc
+yabai -m rule --add app="^App Store$" space=misc
+
+# default layout (can be bsp, stack or float)
+yabai -m config layout bsp
+
+# new window spawns to the right if vertical split, or bottom if horizontal split
+yabai -m config window_placement second_child
+
+# Padding + Window + Mouse configuration
+yabai -m config top_padding     12 \
+    bottom_padding              12 \
+    left_padding                12 \ 
+    right_padding               12 \
+    window_gap                  12 \
+    mouse_follows_focus         on \
+    mouse_modifier              alt \
+    mouse_action1               move \
+    mouse_action2               resize \
+    mouse_drop_action           swap \
+
+
+# Disable Yabai from managing specific applications
+yabai -m rule --add app="^System Settings$" manage=off \
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^QuickTime Player$" manage=off
+yabai -m rule --add app="App Store" manage=off
+yabai -m rule --add app="Activity Monitor" manage=off
+yabai -m rule --add app="Preview" manage=off
+yabai -m rule --add app="^Raycast$" manage=off
+yabai -m rule --add app="^Karabiner-Elements$" manage=off
+yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
