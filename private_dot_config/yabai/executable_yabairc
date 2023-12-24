@@ -1,7 +1,13 @@
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
-#Setup Spaces
+#
+# setup spaces
+#
+for _ in $(yabai -m query --spaces | jq '.[].index | select(. > 6)'); do
+  yabai -m space --destroy 7
+done
+
 function setup_space {
   local idx="$1"
   local name="$2"
@@ -24,19 +30,19 @@ yabai -m space 10 --label media
 yabai -m space 10 --label misc
 
 # Label specific applications
-yabai -m rule --add app="^Safari$" space=web
-yabai -m rule --add app="^Google Chrome$" space=web
-yabai -m rule --add app="^Discord$" space=comms
-yabai -m rule --add app="^Slack$" space=comms
-yabai -m rule --add app="^WhatsApp$" space=comms
+yabai -m rule --add app="Safari$" space=web
+yabai -m rule --add app="Google Chrome$" space=web
+yabai -m rule --add app="Discord$" space=comms
+yabai -m rule --add app="Slack$" space=comms
+yabai -m rule --add app="WhatsApp$" space=comms
 yabai -m rule --add app="^Visual Studio Code$" space=dev
-yabai -m rule --add app="^Activity Monitor$" space=dev
-yabai -m rule --add app="^Hyper$" space=dev
-yabai -m rule --add app="^Spotify$" space=media
-yabai -m rule --add app="^QuickTime Player$" space=media
-yabai -m rule --add app="^System Preferences$" space=misc
-yabai -m rule --add app="^Finder$" space=misc
-yabai -m rule --add app="^App Store$" space=misc
+yabai -m rule --add app="Activity Monitor$" space=dev
+yabai -m rule --add app="Hyper$" space=dev
+yabai -m rule --add app="Spotify$" space=media
+yabai -m rule --add app="QuickTime Player$" space=media
+yabai -m rule --add app="System Preferences$" space=misc
+yabai -m rule --add app="Finder$" space=misc
+yabai -m rule --add app="App Store$" space=misc
 
 # default layout (can be bsp, stack or float)
 yabai -m config layout bsp
