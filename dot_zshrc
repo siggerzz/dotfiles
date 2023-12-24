@@ -10,3 +10,4 @@ for file in ${config_files}; do
 done
 
 eval "$(starship init zsh)"
+source /Users/bensiggery/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
