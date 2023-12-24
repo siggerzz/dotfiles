@@ -1,0 +1,10 @@
+zsh-users/zsh-completions
+Aloxaf/fzf-tab
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-autosuggestions
+caarlos0/zsh-mkc
+djui/alias-tips
+desyncr/auto-ls
+MichaelAquilina/zsh-auto-notify
+arzzen/calc.plugin.zsh
+agkozak/zsh-z
