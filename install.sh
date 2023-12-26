@@ -28,5 +28,36 @@ else
   echo "    chezmoi init https://github.com/siggerzz/dotfiles.git"
 fi
 
-echo ""
+# Ask the user if they want to install packages from the Brewfile
+read -p "Do you want to install packages from the Brewfile? (y/n) " -n 1 -r
+echo    # Move to a new line
+
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    # User wants to install packages, execute the brew bundle command
+    echo '👊 Installing Homebrew packages. This may take a few minutes...'
+    brew bundle
+else
+    # User chose not to install packages
+    echo "Skipping Homebrew package installation."
+fi
+
+echo "Checking Bitwarden login status..."
+
+# Check Bitwarden login status
+BW_STATUS=$(bw status | jq -r '.status')
+
+# Determine the login status and act accordingly
+if [ "$BW_STATUS" != "unauthenticated" ]; then
+    echo "You are already logged into Bitwarden. Current status: $BW_STATUS"
+else
+    echo "You are not logged into Bitwarden. Please login to proceed."
+    echo "Login with Bitwarden CLI:"
+    read -p "Your Bitwarden email: " BW_EMAIL
+    read -s -p "Your Bitwarden master password: " BW_PASSWORD
+    echo
+    bw login "$BW_EMAIL" "$BW_PASSWORD"
+fi
+
+
 echo "Done."
