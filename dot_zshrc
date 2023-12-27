@@ -10,4 +10,6 @@ for file in ${config_files}; do
 done
 
 eval "$(starship init zsh)"
-source /Users/bensiggery/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh

@@ -1,0 +1,9 @@
+[data]
+  name = "Ben Siggery"
+  email = "bensiggery28@gmail.com"
+  {{ if eq .chezmoi.hostname "Bens-Air" }}
+  personal = true
+  {{ end }}
+
+[hooks.apply]
+  command = "sh ./{{ .chezmoi.homeDir }}/install.sh"

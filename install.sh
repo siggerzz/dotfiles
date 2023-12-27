@@ -36,7 +36,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
     # User wants to install packages, execute the brew bundle command
     echo '👊 Installing Homebrew packages. This may take a few minutes...'
-    brew bundle
+    brew bundle --file=~/.brew/Brewfile
 else
     # User chose not to install packages
     echo "Skipping Homebrew package installation."
@@ -56,8 +56,12 @@ else
     read -p "Your Bitwarden email: " BW_EMAIL
     read -s -p "Your Bitwarden master password: " BW_PASSWORD
     echo
-    bw login "$BW_EMAIL" "$BW_PASSWORD"
+    BW_SESSION=$(bw login "$BW_EMAIL" "$BW_PASSWORD" --raw)
+    export BW_SESSION
 fi
 
 
-echo "Done."
+echo "Reloading shell 👀"
+zshreload
+
+echo "All Done!"

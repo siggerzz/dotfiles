@@ -1,0 +1,57 @@
+# Homebrew Taps
+tap "homebrew/autoupdate"
+tap "homebrew/bundle"
+tap "homebrew/services"
+
+# Command Line Tools (Alphabetically ordered)
+brew "awscli"
+brew "bitwarden-cli"
+brew "gh"
+brew "git"
+brew "http-server"
+brew "jq"                # JSON processing
+brew "python@3.11"
+brew "starship"          # Shell prompt
+brew "terraform"
+brew "terraform-docs"
+brew "tflint"            # Terraform linter
+brew "tfsec"             # Terraform security scanner
+brew "volta"
+brew "wget"
+brew "zsh-autocomplete"
+brew "zsh-autosuggestions"
+brew "zsh-fast-syntax-highlighting"
+
+# Shared Desktop Applications (Casks)
+cask "docker"
+cask "firefox"
+cask "google-chrome"
+cask "slack"
+cask "spotify"
+cask "visual-studio-code"
+
+# Mac App Store Applications
+mas "Bitwarden", id: 1352778147
+mas "WhatsApp Messenger", id: 310633997
+
+# Visual Studio Code Extensions
+vscode "GitHub.copilot"
+vscode "github.vscode-github-actions"
+vscode "GitHub.vscode-pull-request-github"
+vscode "dbaeumer.vscode-eslint"
+vscode "eamodio.gitlens"
+vscode "eseom.nunjucks-template"
+vscode "jamiemaguire.pie-design-system-vscode-prototype"
+vscode "ms-playwright.playwright"
+vscode "unem.lit-plugin"
+vscode "yoavbls.pretty-ts-errors"
+
+{{- if eq .personal true }}
+# Personal apps
+cask "arduino-ide"
+cask "balenaetcher"
+cask "cleanmymac-zh"
+cask "discord"
+cask "mullvadvpn"
+cask "vlc"
+{{- end }}
