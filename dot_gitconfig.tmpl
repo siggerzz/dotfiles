@@ -106,22 +106,6 @@ remh = reset --mixed HEAD # HEAD is defined explicitly
 resh = reset --soft HEAD # HEAD is defined explicitly
 rehom = reset --hard origin/main # Throw away all my staged and unstaged changes, forget everything on my current local branch and make it exactly the same as origin/main.
 #############
-r = remote # Manage set of tracked repositories
-ra = remote add # Adds a remote named <name> for the repository at <url>.
-rr = remote remove # Remove the remote named <name>. All remote-tracking branches and configuration settings for the remote are removed.
-rv = remote --verbose # Be a little more verbose and show remote url after name.
-rn = remote rename # Rename the remote named <old> to <new>. All remote-tracking branches and configuration settings for the remote are updated.
-rp = remote prune # Deletes stale references associated with <name>. By default, stale remote-tracking branches under <name> are deleted, but depending on global configuration and the configuration of the remote we might even prune local tags that haven't been pushed there.
-rs = remote show # Gives some information about the remote <name>.
-rao = remote add origin # Add new origin.
-rau = remote add upstream # Add new upstream.
-rro = remote remove origin # Remove origin.
-rru = remote remove upstream # Remove upstream.
-rso = remote show origin # Show current origin.
-rsu = remote show upstream # Show current upstream.
-rpo = remote prune origin # Prune current origin.
-rpu = remote prune upstream # Prune current upstream.
-#############
 rmf = rm -f # Remove files from the working tree and from the index. Override the up-to-date check.
 rmrf = rm -r -f # Same as above + Allow recursive removal when a leading directory name is given.
 #############
