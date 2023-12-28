@@ -61,7 +61,4 @@ else
 fi
 
 
-echo "Reloading shell 👀"
-zshreload
-
 echo "All Done!"
