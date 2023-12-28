@@ -69,11 +69,6 @@ di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD 
 	pr = prune --verbose --progress						# Prune all unreachable objects from the object database. Report all removed objects. Show progress.
 	prn = prune --dry-run											# Do not remove anything; just report what it would remove.
 	##############
-	ps = push 																# Update remote refs along with associated objects
-	psa = push --all 													# Push all branches (i.e. refs under refs/heads/); cannot be used with other <refspec>.
-	psf = push --force												# Usually, the command refuses to update a remote ref that is not an ancestor of the local ref used to overwrite it. This flag disables these checks, and can cause the remote repository to lose commits; use it with care.
-	psu = push --set-upstream									# For every branch that is up to date or successfully pushed, add upstream (tracking) reference.
-	##############
 	pso = push origin													#`origin`is an alias in the system for a particular remote repository. Can be checked by running`git remote -v`.
 	psao = push --all origin									# Same as `push --all`but for origin.
 	psfo = push --force origin								# Same as`push --force`but for origin.
