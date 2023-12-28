@@ -186,8 +186,6 @@ cookiefile = ~/.gitcookies
 [pager]
 branch = false
 grep = false
-[push]
-default = current
 [rebase]
 autosquash = true
 autostash = true
@@ -198,6 +196,12 @@ submoduleSummary = true
 [transfer]
 fsckobjects = true
 [trim]
-bases = main,gh-pages
-[url "git@github.com:siggerzz/"]
-insteadOf = https://github.com/siggerzz/
+bases = main,gh-page
+[init]
+  defaultBranch = main
+[url "git@github.com:"]
+  insteadOf = https://github.com/
+[push]
+  autoSetupRemote = true
+[commit]
+	gpgsign = true
