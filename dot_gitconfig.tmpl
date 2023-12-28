@@ -27,9 +27,6 @@ cd = commit --amend # Replace the tip of the current branch by creating a new co
 cad = commit --all --amend # Shortcut for --amend and --all
 cadne = commit --all --amend --no-edit # Amends a commit without changing its commit message.
 ##############
-cl = clone # Clone a repository into a new directory
-cld = clone --depth 1 # Create a shallow clone with a history truncated to the specified number of commits.
-##############
 cp = cherry-pick # Apply the changes introduced by some existing commits
 cpa = cherry-pick --abort # Cancel the operation and return to the pre-sequence state.
 cpc = cherry-pick --continue # Continue the operation in progress using the information in .git/sequencer. Can be used to continue after resolving conflicts in a failed cherry-pick or revert.
