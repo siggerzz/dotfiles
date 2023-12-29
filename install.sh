@@ -60,5 +60,4 @@ else
     export BW_SESSION
 fi
 
-
 echo "All Done!"
