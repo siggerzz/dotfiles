@@ -1,0 +1,1 @@
+{{ (bitwarden "item" "9a1e5a71-ab4e-4da4-adf7-b0e70189849b").notes }}
