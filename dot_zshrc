@@ -1,5 +1,3 @@
-# define PATH
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:$VOLTA_HOME/bin:~/.spicetify
 # all of our zsh files
 typeset -U config_files
 config_files=(~/.zsh/*.zsh)
@@ -9,9 +7,13 @@ for file in ${config_files}; do
   source "$file"
 done
 
+# define PATH
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:$VOLTA_HOME/bin:~/.spicetify
+
 eval "$(starship init zsh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+gpgconf --launch gpg-agent
 gpg-connect-agent updatestartuptty /bye > /dev/null
