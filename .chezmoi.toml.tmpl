@@ -1,9 +1,13 @@
+{{- $hostName := .chezmoi.hostname -}}
+{{- $name := promptString "What's your name" -}}
+{{- $personal := promptBool "Is this a personal device" -}}
+{{- $email := promptString "What's your email" -}}
+
 [data]
-  name = "Ben Siggery"
-  email = "bensiggery28@gmail.com"
-  {{ if eq .chezmoi.hostname "Bens-Air" }}
-  personal = true
-  {{ end }}
+  name = "{{ $name }}"
+  email = "{{ $email }}"
+  personal = {{ $personal }}
+  hostName = "${{ $hostName }}"
 
 [hooks.apply]
   command = "sh ./{{ .chezmoi.homeDir }}/install.sh"

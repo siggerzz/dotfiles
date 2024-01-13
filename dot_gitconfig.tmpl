@@ -1,7 +1,7 @@
 [user]
-name = Ben Siggery
-email = bensiggery28@gmail.com
-	signingkey = 930362E7276C05EC
+name = {{ .name }}
+email = {{ .email }}
+ 
 [advice]
 pushNonFastForward = false
 statusHints = false
@@ -61,5 +61,3 @@ bases = main,gh-page
 
 [push]
   autoSetupRemote = true
-[commit]
-	gpgsign = true
