@@ -1,5 +1,5 @@
 # define PATH
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:$VOLTA_HOME/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:$VOLTA_HOME/bin:~/.spicetify
 # all of our zsh files
 typeset -U config_files
 config_files=(~/.zsh/*.zsh)

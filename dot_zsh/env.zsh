@@ -32,10 +32,20 @@ export FZF_ALT_C_COMMAND="fd --one-file-system --type d --hidden --exclude .git 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=242,bg=grey,bold,underline"
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion) 
 
+
+#############
+## gpg-agent ##
+#############
 export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
 
 #############
 ## nnn ##
 #############
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='p:preview-tui;f:finder;d:fzcd;'
+
+#############
+## Volta ##
+#############
+export VOLTA_HOME=~/.volta
