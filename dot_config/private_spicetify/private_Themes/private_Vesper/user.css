@@ -1,13 +1,21 @@
-/* couldn't get geist to work, waiting for it as a google font */
-
 * {
-  font-family: "Geist", sans-serif;
+	font-family: "Berkeley Mono Variable", monospace !important;
 }
-*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-transform: uppercase !important;
+	font-family: "Berkeley Mono Variable";
+	font-weight: 100 !important;
+}
 
 /* Removing gradients */
 .main-entityHeader-backgroundColor,
 .main-actionBarBackground-background {
-  background-color: unset !important;
-  background-image: none;
+	background-color: unset !important;
+	background-image: none;
 }
